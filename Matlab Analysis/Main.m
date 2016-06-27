@@ -46,29 +46,29 @@ Data(kk).Outcomes.BAI =  [  8  7  4  5  7  1   1   0 ];
 Data(kk).Outcomes.EEGDay = [ 51 63 84 121 ];
 kk=kk+1;
 
-Data(kk).pID = {'BPe'};         % needs updating
-Data(kk).Sessions=[ 1 2 3 4 ];
-Data(kk).Outcomes.Days = [  1  3 16 27 44 52 70 79 93 ];
-Data(kk).Outcomes.BDI =  [ 59 58 58 52 50 54 54 42 28 ];
-Data(kk).Outcomes.BAI =  [ 55 54 47 38 41 37 35 25 18 ];
-Data(kk).Outcomes.EEGDay = [ 9 14 41 93 ];
-kk=kk+1;
+% Data(kk).pID = {'BPe'};         % needs updating
+% Data(kk).Sessions=[ 1 2  ];
+% Data(kk).Outcomes.Days = [  ];
+% Data(kk).Outcomes.BDI =  [  ];
+% Data(kk).Outcomes.BAI =  [  ];
+% Data(kk).Outcomes.EEGDay = [  ];
+% kk=kk+1;
 
-Data(kk).pID = {'CMi'};         % needs updating
-Data(kk).Sessions=[ 1 2 3 4 ];
+Data(kk).pID = {'CMi'};         % session 3 and 4 were completely problematic 
+Data(kk).Sessions=[ 1 2  ];
 Data(kk).Outcomes.Days = [  1 14 21 28 35 42 50 64 ];
 Data(kk).Outcomes.BDI =  [ 25  3  6  3  3  5  7  2 ];
 Data(kk).Outcomes.BAI =  [ 19  5  5  2  2  3  2  2 ];
-Data(kk).Outcomes.EEGDay = [ 7 20 27 64 ];
+Data(kk).Outcomes.EEGDay = [ 7 20  ];
 kk=kk+1;
 
-Data(kk).pID = {'EBa'};        % needs updating
-Data(kk).Sessions=[ ];
-Data(kk).Outcomes.Days = [ ];
-Data(kk).Outcomes.BDI =  [  ];
-Data(kk).Outcomes.BAI =  [ ];
-Data(kk).Outcomes.EEGDay = [  ];
-kk=kk+1;
+% Data(kk).pID = {'EBa'};        % needs updating
+% Data(kk).Sessions=[ ];
+% Data(kk).Outcomes.Days = [ ];
+% Data(kk).Outcomes.BDI =  [  ];
+% Data(kk).Outcomes.BAI =  [ ];
+% Data(kk).Outcomes.EEGDay = [  ];
+% kk=kk+1;
 
 
 Data(kk).pID = {'GMu'};
@@ -79,20 +79,20 @@ Data(kk).Outcomes.BAI =  [ 17  6  5  2  2  2  1  0  0 ];
 Data(kk).Outcomes.EEGDay = [ 5 23 31 81 ];
 kk=kk+1;
 
-Data(kk).pID = {'HLu'};
-Data(kk).Sessions=[1 2 3 4];
+Data(kk).pID = {'HLu'};   % session 3 and 4 were completely problematic 
+Data(kk).Sessions=[1 2 ];
 Data(kk).Outcomes.Days = [ 1 58 66 72 84 91 101 114 ];
 Data(kk).Outcomes.BDI = [ 29 29 21 24 28 18 12 11 ];
 Data(kk).Outcomes.BAI = [ 4 5 3 2 4 2 1 2 ];
-Data(kk).Outcomes.EEGDay = [ 51 60 71 114];
+Data(kk).Outcomes.EEGDay = [ 51 60 ];
 kk=kk+1;
 
-Data(kk).pID = {'JCa'};
-Data(kk).Sessions=[1 2 3 4];
+Data(kk).pID = {'JCa'};  % session 2 and 4 were completely problematic 
+Data(kk).Sessions=[1  3 ];
 Data(kk).Outcomes.Days = [  1 24 31 54 61 71 78 93];
 Data(kk).Outcomes.BDI =  [ 43 38 36 31 33 36 35 40 ];
 Data(kk).Outcomes.BAI =  [ 45 37 35 40 30 39 43 42 ];
-Data(kk).Outcomes.EEGDay = [ 10 22 51 93 ];
+Data(kk).Outcomes.EEGDay = [ 10  51  ];
 kk=kk+1;
 
 Data(kk).pID = {'MPe'}; 
@@ -103,30 +103,30 @@ Data(kk).Outcomes.BAI =  [  9 11  7  8 11 15 13 15 ];
 Data(kk).Outcomes.EEGDay = [ 13 26 ];
 kk=kk+1;
 
-Data(kk).pID = {'Mru'};     % needs updating
-Data(kk).Sessions=[]; % fix structure!!
-Data(kk).Outcomes.Days = [   ];
-Data(kk).Outcomes.BDI =  [  ];
-Data(kk).Outcomes.BAI =  [ ];
-Data(kk).Outcomes.EEGDay = [  ];
-kk=kk+1;
+% Data(kk).pID = {'Mru'};     % needs updating
+% Data(kk).Sessions=[]; % fix structure!!
+% Data(kk).Outcomes.Days = [   ];
+% Data(kk).Outcomes.BDI =  [  ];
+% Data(kk).Outcomes.BAI =  [ ];
+% Data(kk).Outcomes.EEGDay = [  ];
+% kk=kk+1;
 
-Data(kk).pID = {'MTa'};     % needs updating
-Data(kk).Sessions=[ ]; % fix structure!!
-Data(kk).Outcomes.Days = [  ];
-Data(kk).Outcomes.BDI =  [  ];
-Data(kk).Outcomes.BAI =  [   ];
-Data(kk).Outcomes.EEGDay = [  ];
-kk=kk+1;
+% Data(kk).pID = {'MTa'};     % needs updating
+% Data(kk).Sessions=[ ]; % fix structure!!
+% Data(kk).Outcomes.Days = [  ];
+% Data(kk).Outcomes.BDI =  [  ];
+% Data(kk).Outcomes.BAI =  [   ];
+% Data(kk).Outcomes.EEGDay = [  ];
+% kk=kk+1;
 
 
-Data(kk).pID = {'MWh'};     % needs updating
-Data(kk).Sessions=[]; % fix structure!!
-Data(kk).Outcomes.Days = [   ];
-Data(kk).Outcomes.BDI =  [  ];
-Data(kk).Outcomes.BAI =  [   ];
-Data(kk).Outcomes.EEGDay = [  ];
-kk=kk+1;
+% Data(kk).pID = {'MWh'};     % needs updating
+% Data(kk).Sessions=[]; % fix structure!!
+% Data(kk).Outcomes.Days = [   ];
+% Data(kk).Outcomes.BDI =  [  ];
+% Data(kk).Outcomes.BAI =  [   ];
+% Data(kk).Outcomes.EEGDay = [  ];
+% kk=kk+1;
 
 
 Data(kk).pID = {'MWi'};
@@ -163,20 +163,21 @@ kk=kk+1;
 
 
 Data(kk).pID = {'R-LGo'};
-Data(kk).Sessions=[1 2 3 4];
+Data(kk).Sessions=[ 2 3 4];
 Data(kk).Outcomes.Days = [  1 21 28 36 42 49 57 79 ];
 Data(kk).Outcomes.BDI =  [ 46 26 10  4  2  2  2  1 ];
 Data(kk).Outcomes.BAI =  [ 28 25 21 13  6  3  5  4 ];
-Data(kk).Outcomes.EEGDay = [ 8 17 36 79 ];
+Data(kk).Outcomes.EEGDay = [  17 36 79 ];
 kk=kk+1;
 
-Data(kk).pID = {'RMe'};     % needs updating
-Data(kk).Sessions=[  ];
-Data(kk).Outcomes.Days = [   ];
-Data(kk).Outcomes.BDI =  [  ];
-Data(kk).Outcomes.BAI =  [  ];
-Data(kk).Outcomes.EEGDay = [  ];
-kk=kk+1;
+% 
+% Data(kk).pID = {'RMe'};     % needs updating
+% Data(kk).Sessions=[  ];
+% Data(kk).Outcomes.Days = [   ];
+% Data(kk).Outcomes.BDI =  [  ];
+% Data(kk).Outcomes.BAI =  [  ];
+% Data(kk).Outcomes.EEGDay = [  ];
+% kk=kk+1;
 
 Data(kk).pID = {'SCo'};
 Data(kk).Sessions=[ 1 2 3 4 ];
@@ -196,7 +197,7 @@ kk=kk+1;
 
 
 
-sub = [ 14 16]; % subjects to look at, since not all are complete, and since some have bad sessions (see excel spreadsheet) due to loose reference on cap2
+sub = [ 1 : 15 ]; % subjects to look at, since not all are complete, and since some have bad sessions (see excel spreadsheet) due to loose reference on cap2
 
 %% FEATURE CONSTRUCTION
 % Let's first construct features for each subject, we want to see how
@@ -235,7 +236,7 @@ for i = sub
     end        
     fprintf(1,'done\n');
     cntr=cntr+1;
-end; clearvars -except Features Data mRootDir sub;
+end; clearvars -except Features Data mRootDir sub sig st prm;
 
 
 
@@ -247,11 +248,11 @@ end; clearvars -except Features Data mRootDir sub;
 % measures over 4 sessions, still keep as cell arrays for subject?
 % replace missing features with Not-a-Number
 
-maxSessions = 4;           % at most 4 sessions
+
 for i = 1:length(Features) % for each subject                           
     o = Features{i}.Open; % for eyes open
     mMaxSize = 0;
-    for j = 1:maxSessions 
+    for j = 1:length(Data(i).Sessions )
         if( j < length(o) )
             ms= length( cell2mat( o(j) ));
             if( ms > mMaxSize )
@@ -259,7 +260,7 @@ for i = 1:length(Features) % for each subject
             end
         end        
     end
-    for j = 1:maxSessions
+    for j = 1:length(Data(i).Sessions )
        if( j<=length(o) )
            if isempty( cell2mat( o(j) ) )
                o{j} = NaN(1,mMaxSize);
@@ -271,7 +272,7 @@ for i = 1:length(Features) % for each subject
     o = cell2mat( o ); % for eyes closed                           
     c = Features{i}.Closed;
     mMaxSize = 0;
-    for j = 1:maxSessions 
+    for j = 1:length(Data(i).Sessions ) 
         if( j < length(c) )
             ms= length( cell2mat( c(j) ));
             if( ms > mMaxSize )
@@ -279,7 +280,7 @@ for i = 1:length(Features) % for each subject
             end
         end        
     end
-    for j = 1:maxSessions
+    for j = 1:length(Data(i).Sessions )
        if( j<=length(c) )
            if isempty( cell2mat( c(j) ) )
                c{j} = NaN(1,mMaxSize);
@@ -291,7 +292,7 @@ for i = 1:length(Features) % for each subject
     c = cell2mat( c );                               
     p = Features{i}.P3; % for p300
     mMaxSize = 0;
-    for j = 1:maxSessions
+    for j = 1:length(Data(i).Sessions )
         if( j < length(p) )
             ms= length( cell2mat( p(j) ));
             if( ms > mMaxSize )
@@ -299,7 +300,7 @@ for i = 1:length(Features) % for each subject
             end
         end        
     end
-    for j = 1:maxSessions
+    for j = 1:length(Data(i).Sessions )
        if( j<=length(p) )
            if isempty( cell2mat( p(j) ) )
                p{j} = NaN(1,mMaxSize);
@@ -310,7 +311,7 @@ for i = 1:length(Features) % for each subject
     end
     p = cell2mat( p );        
     features{i}=[ o c p ];
-end; clearvars -except Features Data mRootDir features sub;
+end; clearvars -except Features Data mRootDir features sub  sig st prm;
 features = features';
 features = cell2mat( features );
 
@@ -338,19 +339,23 @@ for i = 1:length(sub)
         
 end;  
 
+features(isnan(features))=[];
+features = reshape(features,length(BAI),[]);
+
 %compute correlation
-crl_depression = zeros (1, size(features,2));   %depression correlation
-crl_anxiety = zeros (1, size(features,2));      %anxiety correlation
+corr_BDI = zeros (1, size(features,2));  
+corr_BAI = zeros (1, size(features,2));    
+
 for i = 1 : size(features,2)
-        crl_depression(i) = corr( BDI , features(:,i));
-        crl_anxiety(i) = corr( BAI , features(:,i));
+        corr_BDI(i) = corr( BDI , features(:,i));
+        corr_BAI(i) = corr( BAI , features(:,i));
 end
 
 
-[d_corr_values d_corr_ind] = sort(crl_depression);
-[a_corr_values a_corr_ind] = sort(crl_depression);
+[BDI_corrValues BDI_corrInd] = sort(corr_BDI);
+[BAI_corrValues BAI_corrInd] = sort(corr_BAI);
 
-clearvars -except Features Data mRootDir features sub BDI BAI d_corr_values d_corr_ind a_corr_values a_corr_ind; 
+clearvars -except Features Data mRootDir features sub sig st prm BDI BAI d_corr_values d_corr_ind a_corr_values a_corr_ind; 
 
 
 

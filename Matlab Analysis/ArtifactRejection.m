@@ -16,7 +16,7 @@ a = 0;
 for k = 1 : size(begInd, 2)-1
     win(:,:)  = sig( begInd(k) : begInd(k) + winSize - 1 , : );
     variance = var(win,1) ;
-    ind = find (variance > threshold);
+    ind = find ( (variance > threshold) | (variance < 10) );
     for l = 1 : length(ind)
         st.Artifact( begInd(k) : begInd(k) + winSize - 1, ind(l) ) = 1 ;
     end    
@@ -31,8 +31,6 @@ for i = 1 :  size (sig,2)
     end
 end
 
-
-% option 2 -- cutoff amplitude greater than 100 microVolts
     
 
 

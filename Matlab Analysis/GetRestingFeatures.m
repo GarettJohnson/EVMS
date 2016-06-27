@@ -21,14 +21,17 @@ ind = find (prm.BadChannels == 0);
 smArt = st.Artifact(:,ind);
 smSig = sig(:,ind);
 
-% sum of st.Artifact acroos all channels
+% sum of st.Artifact across all channels.
+% checks to see if there is bad signalat a specific time 
+% point in the signal
 artSum = zeros(size(sig, 1),1);
 artSum = sum (smArt , 2);
 
-% if sum is 0, that means the signal is clean
+% if artSum is 0, that means the signal is clean
 
-%all points where st.Artifact changes
+% all points where artSum changes
 ind = find ( diff (artSum) ~= 0) + 1 ; 
+
 %all change points where value is zero 
 zp = find ( artSum (ind) == 0);
 
@@ -36,7 +39,7 @@ zp = find ( artSum (ind) == 0);
 chStart = ind (zp);
 
 zp = zp + 1;
-
+    
 % ending point of clean chunks of signal
 if (zp (end) > size(ind) )
     zp(end) =  size(ind,1) ;
@@ -45,6 +48,7 @@ chEnd = ind (zp) - 1 ;
 if( chStart(end) == ind(end))
     chEnd(end) = size(smSig , 1);
 end
+
 
 % only keep chunks that are greater than 1 second
 ind = find( (chEnd - chStart) < fs );
@@ -87,9 +91,9 @@ for k = 1: size(chStart, 1);
     bpTotal=zeros( size(groupings,1),1 );
     for i = 1:size(groupings,1)
         for j = 1:size(bands,1)
-            bp(i,j)= mean( bandpower(sig(:,groupings{i}),fs,bands(j,:)) );
+            bp(i,j)= mean( bandpower(sig ( chStart(k):chEnd(k) ,groupings{i}),fs,bands(j,:)) );
         end
-        bpTotal(i)=mean( bandpower(sig(:,groupings{i}),fs,[bands(1) bands(end)]) );
+        bpTotal(i)=mean( bandpower(sig(chStart(k):chEnd(k),groupings{i}),fs,[bands(1) bands(end)]) );
     end
     
     bpAsPercentageOfRegion = bp./ repmat(bpTotal,1,size(bp,2));
@@ -104,14 +108,14 @@ for k = 1: size(chStart, 1);
     features = features';
     
     % calculate correlation between frontal hemispheres? and use as a feature
-    sigFLeft = mean(sig(:,groupings{2}),2);
-    sigFRight = mean(sig(:,groupings{3}),2);
+    sigFLeft = mean(sig(chStart(k):chEnd(k),groupings{2}),2);
+    sigFRight = mean(sig(chStart(k):chEnd(k),groupings{3}),2);
     r = corr(sigFLeft,sigFRight);
     features = [features r];
     
     % calculate mutual information (like correlation)
-    sigFLeft = mean(sig(:,groupings{2}),2);
-    sigFRight = mean(sig(:,groupings{3}),2);
+    sigFLeft = mean(sig(chStart(k):chEnd(k),groupings{2}),2);
+    sigFRight = mean(sig(chStart(k):chEnd(k),groupings{3}),2);
     % change into that directory, just adding to path doesn't work with
     % executables???
     cd('.\MutualInformationICA\');
