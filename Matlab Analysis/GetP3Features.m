@@ -17,11 +17,14 @@ sig2 = filter( ones(decFact,1)/decFact,1,sig2 );
 sig2 = flipud(sig2);
 
 % % let's re-reference to something other than mastoid
-sig2 = sig2 - repmat( mean(sig2(:,reRefCh),2),1,size(sig2,2) ); % nope, use all channels to re-ref
+% sig2 = sig2 - repmat( nanmean(sig2(:,reRefCh),2),1,size(sig2,2) ); % nope, use all channels to re-ref
 sig2 = sig2(:,mChans);
 mWin = round(mWindow*fs/1000);
 
-% find where the oddball stimuli start, the oddball is when stimcode is 2
+st.Artifact = st.Artifact(:,mChans);
+sig2(st.Artifact==1)=NaN;
+        
+%find where the oddball stimuli start, the oddball is when stimcode is 2
 ind = find(st.StimulusCode == 2 & [0; diff(double(st.StimulusCode)==2)]);
 dataCube = zeros( mWin(2)-mWin(1),size(sig2,2),length(ind) );
 for i = 1:length(ind)
@@ -104,8 +107,8 @@ mInd( (round(length(mInd)/2)-3*fs):(round(length(mInd)/2)+3*fs) ) = [];
 chLeft = [1 17 19 21 22];
 chRight = [3 18 20 23 24];
 % just average the left and right frontal electrodes?
-sigL = mean( sig( mInd,chLeft ),2 );
-sigR = mean( sig( mInd,chRight ),2 );
+sigL = nanmean( sig( mInd,chLeft ),2 );
+sigR = nanmean( sig( mInd,chRight ),2 );
 
 % calculate the correlation between the two
 r = corr( sigL, sigR );
