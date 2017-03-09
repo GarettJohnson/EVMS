@@ -123,9 +123,6 @@ miNorm = mi/ sqrt( entropy(sigL',[],[],2)*entropy(sigR',[],[],2) );
 features = [features mi miNorm];
 
 
-
-
-
 % KEEP THIS UP TO DATE WHENEVER YOU CHANGE THIS FILE SO YOU CAN TELL WHAT
 % THE FEATURES ACTUALLY REFER TO WHEN LOOKING TO SEE WHATS IMPORTANT /
 % CORRELATED WITH TREATMENT OUTCOMES!!!!!
@@ -133,4 +130,3 @@ features = [features mi miNorm];
 % as it stands 15 features are:
 %     [Cz, Pz, POz, R, MI, MI_normalized]
 % where each of the first 3 have 4 measures (p3latency; p3amplitude; n2latency; n2amplitude)
-
