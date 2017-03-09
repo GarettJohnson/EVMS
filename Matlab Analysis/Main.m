@@ -16,10 +16,10 @@ mRootDir = 'C:\Users\Mike\Google Drive\EVMS\';
 % 4: Oddball task 2
 
 % BDI levels:
-% 0â€“9: indicates minimal depression
-% 10â€“18: indicates mild depression
-% 19â€“29: indicates moderate depression
-% 30â€“63: indicates severe depression.
+% 0–9: indicates minimal depression
+% 10–18: indicates mild depression
+% 19–29: indicates moderate depression
+% 30–63: indicates severe depression.
 
 % Some sessions are really bad / corrupted!!!!!! So don't just use this as
 % is. Also some subjects didn't get all the sessions in
@@ -263,11 +263,14 @@ kk=kk+1;
 
 
 % subjects that improved
-% sub = find([Data.Improved] >= 2 ); 
-% impGT2 = GetFeatureSignificance(Data(sub), mRootDir);
+sub = find([Data.Improved] >= 2 ); 
+[impGT2,Features1] = GetFeatureSignificance(Data(sub), mRootDir);
 
 fprintf(1,'\n');
 %subjects that didn't improve
 sub = find([Data.Improved] < 2 ); 
-impLT2 = GetFeatureSignificance(Data(sub), mRootDir);
+[impLT2,Features2] = GetFeatureSignificance(Data(sub), mRootDir);
+
+
+
 

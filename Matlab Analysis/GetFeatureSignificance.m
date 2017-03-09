@@ -1,4 +1,4 @@
-function p = GetFeatureSignificance (Data, mRootDir)
+function [p, Features] = GetFeatureSignificance (Data, mRootDir)
 
 %% FEATURE CONSTRUCTION
 % Let's first construct features for each subject, we want to see how
@@ -26,25 +26,25 @@ for i = sub
             [ sig,st,prm ] = load_bcidat( [char(mDir) char(mFiles(1).name)],'-calibrated' );           
             %rereference to Fz (channel 2)
             sig = sig-repmat(sig(:,2),1,size(sig,2));            
-            [ sig,st,prm ] = ArtifactRejection( sig,st,prm );
-            Features{cntr}.Open{j,1} = GetRestingFeatures( sig, st, prm );
-%             Features{cntr}.Open{j,1} = RestingFeaturesKemp( sig, st, prm );
+            [ sig,st,prm ] = ArtifactDetection( sig,st,prm );
+%             Features{cntr}.Open{j,1} = GetRestingFeatures( sig, st, prm );
+            Features{cntr}.Open{j,1} = RestingFeaturesKemp( sig, st, prm );
 
             fprintf(1,'.');             
             [ sig,~,prm ] = load_bcidat( [char(mDir) char(mFiles(2).name)],'-calibrated' );
             %rereference to Fz (channel 2)
             sig = sig-repmat(sig(:,2),1,size(sig,2));
-            [ sig,st,prm ] = ArtifactRejection( sig,st,prm );
-            Features{cntr}.Closed{j,1} = GetRestingFeatures( sig, st, prm );
-%             Features{cntr}.Closed{j,1} = RestingFeaturesKemp( sig, st, prm );
+            [ sig,st,prm ] = ArtifactDetection( sig,st,prm );
+%             Features{cntr}.Closed{j,1} = GetRestingFeatures( sig, st, prm );
+            Features{cntr}.Closed{j,1} = RestingFeaturesKemp( sig, st, prm );
             
             fprintf(1,'.'); 
             [ sig,st,prm ] = load_bcidat( [char(mDir) char(mFiles(3).name)],[char(mDir) char(mFiles(4).name)],'-calibrated' ); 
             %rereference to Fz (channel 2)
             sig = sig-repmat(sig(:,2),1,size(sig,2));
-            [ sig,st,prm ] = ArtifactRejection( sig,st,prm );
-            Features{cntr}.P3{j,1} = GetP3Features( sig,st,prm,0 );
-%             Features{cntr}.P3{j,1} = RestingFeaturesKemp( sig, st, prm );
+            [ sig,st,prm ] = ArtifactDetection( sig,st,prm );
+%             Features{cntr}.P3{j,1} = GetP3Features( sig,st,prm,0 );
+            Features{cntr}.P3{j,1} = RestingFeaturesKemp( sig, st, prm );
             fprintf(1,'.');
         end
     end        
