@@ -3,26 +3,38 @@ clear; clc; close all;
 % Dataset Root Location
 mRootDir = 'C:\Users\Mike\Google Drive\EVMS\';
 
-% 4 possible sessions for each subject:
-% 1: Baseline
-% 2: Session5
-% 3: Session15
-% 4: EndofTreatment
+%{
+-4 possible sessions for each subject:
+    1: Baseline
+    2: Session5
+    3: Session15
+    4: EndofTreatment
 
-% 4 Runs within each session in this order:
-% 1: Eyes open, basically resting eeg
-% 2: Eyes closed, resting eeg
-% 3: Oddball task 1
-% 4: Oddball task 2
+-4 Runs within each session in this order:
+    1: Eyes open, basically resting eeg
+    2: Eyes closed, resting eeg
+    3: Oddball task 1
+    4: Oddball task 2
 
-% BDI levels:
-% 0–9: indicates minimal depression
-% 10–18: indicates mild depression
-% 19–29: indicates moderate depression
-% 30–63: indicates severe depression.
+-BDI levels:
+    0–9: indicates minimal depression
+    10–18: indicates mild depression
+    19–29: indicates moderate depression
+    30–63: indicates severe depression.
 
-% Some sessions are really bad / corrupted!!!!!! So don't just use this as
-% is. Also some subjects didn't get all the sessions in
+* Some sessions are really bad / corrupted!!!!!! So don't just use this as
+  is. Also some subjects didn't get all the sessions in
+
+
+List of patients added:
+    ACo-Pa  AMa     AWa     BKBr    BKn
+    BPe     CMi     EBa     EGr     GMu 
+    GMe     HLu     JCa     JGr     JJo
+    JLa     MaWi    MDe     MMc     MPe     
+    MRu     MTa     MWh     MWi     NKo     
+    NMi     NSt     NTo     PCi     R-LGo   
+    RMe     SCo     SHa     VMc     WCu
+%}
 
 % Patient Identification
 kk=1;
@@ -63,13 +75,22 @@ Data(kk).Outcomes.EEGDay = [ 51 63 84 121 ];
 Data(kk).Improved = [ 2 ];
 kk=kk+1;
 
-Data(kk).pID = {'BPe'};     %clean signals for all sessions     
+Data(kk).pID = {'BKBr'}; % improved 2 levels (moderate - minimal)
+Data(kk).Sessions=[ 1 2 3 4 ];
+Data(kk).Outcomes.Days = [  1 63 70 78 85 92 101 121 ];
+Data(kk).Outcomes.BDI =  [ 20 19  7 18 18  8   9   8 ];
+Data(kk).Outcomes.BAI =  [  8  7  4  5  7  1   1   0 ];
+Data(kk).Outcomes.EEGDay = [ 51 63 84 121 ];
+Data(kk).Improved = [ 2 ];
+kk=kk+1;
+
+Data(kk).pID = {'BKn'};         
 Data(kk).Sessions = [ 1 2 3 4 ];
-Data(kk).Outcomes.Days = [  1 131 139 146 154 161 168 182 ];
-Data(kk).Outcomes.BDI =  [ 28  21  16  12   9   7   4  12 ];
-Data(kk).Outcomes.BAI =  [ 10   6   3   2   2   2   1   2 ];
-Data(kk).Outcomes.EEGDay = [ 119 131 146 194 ];
-Data(kk).Improved = [ 1 ];
+Data(kk).Outcomes.Days = [ 1 109 116 123 133 140 147 162 ];
+Data(kk).Outcomes.BDI =  [ 53 33  45  52  50  61  44  17 ];
+Data(kk).Outcomes.BAI =  [ 22 22  29  18  16  36  11  14 ];
+Data(kk).Outcomes.EEGDay = [ 100 108 123 162 ];
+Data(kk).Improved = [ 2 ];
 kk=kk+1;
 
 Data(kk).pID = {'EGr'};     % did not improve      
@@ -98,6 +119,17 @@ kk=kk+1;
 % kk=kk+1;
 
 
+Data(kk).pID = {'GMe'};   
+Data(kk).Sessions=[1 2 3 4];
+Data(kk).Outcomes.Days = [  1 24 30 71 78 91 100 113 ]; 
+Data(kk).Outcomes.BDI =  [ 23 28 21 13  6 10   9   5 ];
+Data(kk).Outcomes.BAI =  [  2  5  5  1  1  3   5   3 ];
+Data(kk).Outcomes.EEGDay = [ 16 22 69 113 ];
+Data(kk).Improved = [ 2 ];
+kk=kk+1;
+
+
+
 Data(kk).pID = {'GMu'};   %improved 3 levels (severe to minimal)
 Data(kk).Sessions=[1 2 3 4];
 Data(kk).Outcomes.Days = [  1 16 23 33 40 47 65 71 81 ]; 
@@ -105,6 +137,33 @@ Data(kk).Outcomes.BDI =  [ 38 17 11  9  8  4  3  2  1 ];
 Data(kk).Outcomes.BAI =  [ 17  6  5  2  2  2  1  0  0 ];
 Data(kk).Outcomes.EEGDay = [ 5 23 31 81 ];
 Data(kk).Improved = [ 3 ];
+kk=kk+1;
+
+Data(kk).pID = {'JJo'};   
+Data(kk).Sessions=[1 2 3 4];
+Data(kk).Outcomes.Days = [  1 66 74 84 91 98 107 129 ];
+Data(kk).Outcomes.BDI =  [ 15 10  8  4  3  4   4   6 ];
+Data(kk).Outcomes.BAI =  [ 16  3  5  4  4  2   6   2 ];
+Data(kk).Outcomes.EEGDay = [ 58 66 80 129 ];
+Data(kk).Improved = [ 1 ];
+kk=kk+1;
+
+Data(kk).pID = {'JLa'};   
+Data(kk).Sessions=[1 2 3 4];
+Data(kk).Outcomes.Days = [  1 52 60 72 80 93 102 131 ];
+Data(kk).Outcomes.BDI =  [ 33 22 25 22 15 16  14  25 ];
+Data(kk).Outcomes.BAI =  [ 11  5  5  2  1  2   2   9 ];
+Data(kk).Outcomes.EEGDay = [ 36 53 65 131 ];
+Data(kk).Improved = [ 1 ];
+kk=kk+1;
+
+Data(kk).pID = {'JGr'};   
+Data(kk).Sessions=[1 2 3 4];
+Data(kk).Outcomes.Days = [  1 63 75 79 89 98 110 128 ];
+Data(kk).Outcomes.BDI =  [ 25 23 21 21 17 15  18  14 ];
+Data(kk).Outcomes.BAI =  [ 11 16 12 11 13  9  10   9 ];
+Data(kk).Outcomes.EEGDay = [ 54 61 77 128 ];
+Data(kk).Improved = [ 1 ];
 kk=kk+1;
 
 % Data(kk).pID = {'HLu'};   % session 3 and 4 were completely problematic 
@@ -123,6 +182,15 @@ kk=kk+1;
 % Data(kk).Outcomes.EEGDay = [ 10  51  ];
 % kk=kk+1;
 
+Data(kk).pID = {'MWi'};     
+Data(kk).Sessions=[1 2 3 4];
+Data(kk).Outcomes.Days = [ 1  25 32 39 46 53 60 82 ];
+Data(kk).Outcomes.BDI =  [ 44 34 34 27 26 24 24 20 ];
+Data(kk).Outcomes.BAI =  [ 24 21 15 10 10  7  6  8 ];
+Data(kk).Outcomes.EEGDay = [ 7 25 40 82 ];
+Data(kk).Improved = [ 1 ];
+kk=kk+1;
+
 % Data(kk).pID = {'MPe'}; 
 % Data(kk).Sessions=[2 3]; % fix structure!!
 % Data(kk).Outcomes.Days = [  1 13 20 27 35 42 49 58 ];
@@ -140,13 +208,22 @@ kk=kk+1;
 % Data(kk).Improved = [ 1 ];
 % kk=kk+1;
 
-Data(kk).pID = {'MDe'};     %improved 3 levels (severe to minimal)
+Data(kk).pID = {'MDe'};   
 Data(kk).Sessions=[1 2 3 4];
 Data(kk).Outcomes.Days = [  1 20 26 34 41 49 56 69 ];
 Data(kk).Outcomes.BDI =  [ 38 31 30 26 22 26 24 24 ];
 Data(kk).Outcomes.BAI =  [ 24 16 14 10 10 11 13 10 ];
 Data(kk).Outcomes.EEGDay = [ 12 21 30 69 ];
 Data(kk).Improved = [ 1 ];
+kk=kk+1;
+
+Data(kk).pID = {'MMc'};     
+Data(kk).Sessions=[1 2 3 4];
+Data(kk).Outcomes.Days = [  1 30 37 49 57 64 78 92 ];
+Data(kk).Outcomes.BDI =  [ 24  5  7 10  8  2  3  5 ];
+Data(kk).Outcomes.BAI =  [ 14  9  3  6  3  3  4  2 ];
+Data(kk).Outcomes.EEGDay = [ 23 29 46 92 ];
+Data(kk).Improved = [ 2 ];
 kk=kk+1;
 
 Data(kk).pID = {'MTa'};     
@@ -176,6 +253,15 @@ Data(kk).Outcomes.BDI =  [ 38 32 22 14 14 11  11   6 ];
 Data(kk).Outcomes.BAI =  [ 10  5  4  2  1  0   0   0 ];
 Data(kk).Outcomes.EEGDay = [ 8 62 77 112 ];
 Data(kk).Improved = [ 3 ];
+kk=kk+1;
+
+Data(kk).pID = {'NKo'};     
+Data(kk).Sessions=[ 1 2 3 4 ];
+Data(kk).Outcomes.Days = [  1 49 58 69 79 86 96 118 ];
+Data(kk).Outcomes.BDI =  [ 31 12 15  9  3  8  9  12 ];
+Data(kk).Outcomes.BAI =  [ 11  6 16  7  8  8  4  10 ];
+Data(kk).Outcomes.EEGDay = [ 40 55 64 118 ];
+Data(kk).Improved = [ 2 ];
 kk=kk+1;
 
 Data(kk).pID = {'NMi'};     %improved 3 levels (severe to minimal)
@@ -250,6 +336,15 @@ kk=kk+1;
 % Data(kk).Outcomes.EEGDay = [ 1 10 27 ];
 % Data(kk).Improved = [ 1 ];
 % kk=kk+1;
+
+Data(kk).pID = {'VMc'};    
+Data(kk).Sessions=[1 2 3 4];
+Data(kk).Outcomes.Days = [  1 37 44 56 63 77 92 113 ];
+Data(kk).Outcomes.BDI =  [ 36 29 26 37 27 16 22  24 ];
+Data(kk).Outcomes.BAI =  [ 32 42 40 51 52 41 40  40 ];
+Data(kk).Outcomes.EEGDay = [ 28 37 53 113 ];
+Data(kk).Improved = [ 1 ];
+kk=kk+1;
 
 % missing last BDI and BAI values( repeated last known value)
 Data(kk).pID = {'WCu'};    %improved 3 levels (severe to minimal)
